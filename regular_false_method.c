@@ -40,5 +40,7 @@ int main()
 {   int tolerance;
     printf("Please enter the tolerance value: ");
     scanf("%f", &tolerance);
-    
+    int ans = regular_falsi(1, 2, tolerance);
+    printf("The ans is : %f", ans);
+    return 0;
 }
