@@ -2,6 +2,7 @@
 #include <math.h>
 
 double f(double x) {
+    // Calculate the square of the natural logarithm of x
     return pow(log(x), 2);
 }
 
