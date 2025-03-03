@@ -11,7 +11,7 @@ float bisection(float a, float b, float tolerance)
 	float c;
 	if ((f(a) * f(b)) > 0)
 	{
-		printf("Bisection methods are not appliable in that interval");
+		printf("Bisection methods are not appliable in that interval \n");
 		return 0;
 	}
 
