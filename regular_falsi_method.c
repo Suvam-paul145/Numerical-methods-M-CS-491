@@ -16,7 +16,7 @@ float regular_falsi(float a, float b, float tolerance)
     }
 
     float c;
-    while (f(c) < tolerance)
+    while (fabs(f(c)) >= tolerance)
     {
         c = (a * f(b) - b * f(a)) / (f(b) - f(a));
         if (f(c) == 0)
@@ -38,7 +38,7 @@ float regular_falsi(float a, float b, float tolerance)
 int main()
 {
 
-    float ans = regular_falsi(3, 4, 0.00002);
+    float ans = regular_falsi(0, 4, 0.00002);
     printf("The ans is : %f", ans);
     return 0;
 }
