@@ -15,26 +15,24 @@ float regular_falsi(float a, float b, float tolerance)
         return 0;
     }
 
-    else
+    float c;
+    while ((b - a) >= tolerance)
     {
-
-        while ((b - a) >= tolerance)
+        c = (a * f(b) - b * f(a)) / (f(b) - f(a));
+        if (f(c) == 0)
         {
-            float c = (a * f(b) - b * f(a)) / (f(b) - f(a));
-            if (f(c) == 0)
-            {
-                return c;
-            }
-            else if (f(a) * f(c) < 0)
-            {
-                b = c;
-            }
-            else
-            {
-                a = c;
-            }
+            return c;
+        }
+        else if (f(a) * f(c) < 0)
+        {
+            b = c;
+        }
+        else
+        {
+            a = c;
         }
     }
+    return c;
 }
 
 int main()
