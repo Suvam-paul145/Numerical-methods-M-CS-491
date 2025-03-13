@@ -3,12 +3,12 @@
 
 float f(float x)
 {
-    return  cos(x) - x * x - x;
+    return cos(x) - x * x - x;
 }
 
 float regular_falsi(float a, float b, float tolerance)
 {
-    
+
     if (f(a) * f(b) > 0)
     {
         printf("Regular Falsi method is not applicable in that interval");
@@ -17,9 +17,10 @@ float regular_falsi(float a, float b, float tolerance)
 
     else
     {
-        
+
         while ((b - a) >= tolerance)
         {
+            float c = (a * f(b) - b * f(a)) / (f(b) - f(a));
             if (f(c) == 0)
             {
                 return c;
@@ -34,7 +35,6 @@ float regular_falsi(float a, float b, float tolerance)
             }
         }
     }
-    return c;
 }
 
 int main()
