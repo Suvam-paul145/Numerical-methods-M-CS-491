@@ -11,12 +11,12 @@ float regular_falsi(float a, float b, float tolerance)
 
     if (f(a) * f(b) > 0)
     {
-        printf("Regular Falsi method is not applicable in that interval");
+        printf("Regular Falsi method is not applicable in that interval \n");
         return 0;
     }
 
     float c;
-    while ((b - a) >= tolerance)
+    while (f(c) < tolerance)
     {
         c = (a * f(b) - b * f(a)) / (f(b) - f(a));
         if (f(c) == 0)
@@ -38,7 +38,7 @@ float regular_falsi(float a, float b, float tolerance)
 int main()
 {
 
-    float ans = regular_falsi(0, 2, 0.00002);
+    float ans = regular_falsi(3, 4, 0.00002);
     printf("The ans is : %f", ans);
     return 0;
 }
