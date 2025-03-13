@@ -1,45 +1,41 @@
 #include <stdio.h>
 #include <math.h>
 
-float f(float x)
-{
-    return x * x - 2 * x - 7;
+double f(double x) {
+    return (x * x - 2 * x - 7);
 }
 
-float regular_falsi(float a, float b, float tolerance)
-{
-    if (f(a) * f(b) > 0)
-    {
-        printf("Regular Falsi method is not applicable in that interval\n");
-        return 0;
+double regulaFalsi(double x0, double x1, double tol, int max_iter) {
+    double x2;
+    int iter = 0;
+
+    while (iter < max_iter) {
+        x2 = x1 - (f(x1) * (x1 - x0)) / (f(x1) - f(x0));
+
+        if (fabs(f(x2)) < tol) {
+            return x2;
+        }
+
+        if (f(x2) * f(x0) < 0) {
+            x1 = x2;
+        } else {
+            x0 = x2;
+        }
+
+        iter++;
     }
 
-    float c;
-    while ((b - a) >= tolerance)
-    {
-        c = (a * f(b) - b * f(a)) / (f(b) - f(a));
-        if (fabs(f(c)) < tolerance)
-        {
-            return c;
-        }
-        else if (f(a) * f(c) < 0)
-        {
-            b = c;
-        }
-        else
-        {
-            a = c;
-        }
-    }
-    return c;
+    return x2;
 }
 
-int main()
-{
-    float ans = regular_falsi(3, 4, 0.00002);
-    if (ans != 0)
-    {
-        printf("The answer is: %f\n", ans);
-    }
+int main() {
+    double x0 = 2.0, x1 = 3.0; 
+    double tol = 0.0001;        
+    int max_iter = 100;        
+
+    double root = regulaFalsi(x0, x1, tol, max_iter);
+
+    printf("The root of the equation is: %lf\n", root);
+
     return 0;
 }
