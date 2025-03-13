@@ -8,7 +8,7 @@ float f(float x)
 
 float regular_falsi(float a, float b, float tolerance)
 {
-    float c = (a * f(b) - b * f(a)) / (f(b) - f(a));
+    
     if (f(a) * f(b) > 0)
     {
         printf("Regular Falsi method is not applicable in that interval");
@@ -17,7 +17,7 @@ float regular_falsi(float a, float b, float tolerance)
 
     else
     {
-
+        
         while ((b - a) >= tolerance)
         {
             if (f(c) == 0)
