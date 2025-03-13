@@ -3,7 +3,7 @@
 
 float f(float x)
 {
-    return x * x - 2 * x - 7;
+    return  cos(x) - x * x - x;
 }
 
 float regular_falsi(float a, float b, float tolerance)
@@ -40,7 +40,7 @@ float regular_falsi(float a, float b, float tolerance)
 int main()
 {
 
-    float ans = regular_falsi(3, 4, 0.00002);
+    float ans = regular_falsi(0, 2, 0.00002);
     printf("The ans is : %f", ans);
     return 0;
 }
