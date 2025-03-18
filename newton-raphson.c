@@ -3,12 +3,12 @@
 
 float f(float x)
 {
-    return exp(x) - x - 1;
+    return (pow (10,x) + x - 4);
 }
 
 float derivative(float x)
 {
-    return exp(x) - 1;
+    return pow(10, x) * log(10) + 1;
 }
 float newton_raphson(float x0, float tolerance)
 {
