@@ -24,6 +24,6 @@ float newton_raphson(float x0, float tolerance)
 int main()
 {
 
-    float ans = newton_raphson(1, 0.0001);
+    float ans = newton_raphson(2, 0.0001);
     printf("The ans of the question is: %f", ans);
 }
